@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="http://get.influxdb.org/influxdb-latest.js"></script>
+		
+	</head>
+	<body>
+		<button onclick="influx()" type="button">do it</button>
+		<script>
+			function influx() {
+				influxdb = new InfluxDB({
+				  "host" :"localhost",
+				  "username" :"twer_user",
+				  "password" :"twer_pass",
+				  "database" :"twer"
+				});
+
+				console.log('prepare');
+				influxdb.writePoint('demo', '99');
+			}
+		</script>
+	</body>
+</html>
